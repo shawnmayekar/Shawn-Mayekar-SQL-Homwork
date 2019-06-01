@@ -1,0 +1,46 @@
+
+CREATE TABLE Departments
+    Dept_NO int,
+    Deptname varchar(30
+    Primary KEY (Dept_No)
+);
+CREATE TABLE DeptEmployees (
+    Emp_No int,
+    DeptNo int NOT NULL,
+    from_date timestamp NOT NULL,
+    to_date timestamp NOT NULL
+    Foreign KEY (Emp_No)
+
+
+
+CREATE TABLE Employees (
+    Emp_No int NOT NULL,
+    birth_date NOT NULL,
+    first_name varchar(30) NOT NULL,
+    last_name varchar(30) NOT NULL,
+    PRIMARY KEY (Emp_No),
+);
+
+CREATE TABLE DeptManager (
+    DeptNo int NOT NULL,
+    Emp_no NOT NULL,
+    fromdate timestamp,
+    todate timetamp,
+   Foreign KEY (Emp_No) references TABLE Employees(Emp_No), Foreign Key (DeptNo) from TABLE Departments
+);
+CREATE TABLE Titles
+    EMP_NO int,
+    Title VARCHAR(30) NOT NULL,
+    from_date timestamp NOT NULL,
+    todate timestamp NOT NULL,
+    FOREIGN KEY (Emp_No) REFERENCES TABLE Employees(Emp_No)
+);
+
+
+CREATE TABLE Salaries
+    EMP_NO int,
+    salaries int NOT NULL,
+    from_date timestamp NOT NULL,
+    todate timestamp NOT NULL,
+    FOREIGN KEY (Emp_No) REFERENCES TABLE Employees(Emp_No)
+);
